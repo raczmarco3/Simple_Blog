@@ -14,6 +14,15 @@
     <?php
         } else {
             echo "Welcome back ", $_SESSION["username"];
+    ?>
+            <form method="POST" action="">
+                <input type="submit" name="logout" value="Logout">
+            </form>
+    <?php
+            if(isset($_POST["logout"])) {
+                unset($_SESSION["username"]);
+                header('Refresh: 0;');
+            }
         }
     ?>
 
@@ -24,7 +33,7 @@
         } else {
             $user = new User();
             if($user -> logIn($_POST["username"], md5($_POST["password"]))) {
-                header('Refresh: 1;');
+                header('Refresh: 0;');
             } else {
                 echo "Wrong credentials!";
             }
