@@ -25,7 +25,7 @@ Class Database {
             echo "Caught Exception: ", $exc -> getMessage(), "<br>";
         }     
 
-        return $this->connection;
+        return $this -> connection;
     }
 
     // Create a new user 
@@ -37,6 +37,18 @@ Class Database {
             echo "Caught Exception: ", $exc -> getMessage(), "<br>";
         }
     }
+
+    function checkPassword($username, $password) {
+        $query = "SELECT password FROM users WHERE username='$username' AND password='$password';";
+        try {
+            if($this -> connection -> query($query) -> num_rows == 1) {
+                return true;
+            }
+            return false;
+        } catch (Exception $exc) {
+            echo "Caught Exception: ", $exc -> getMessage(), "<br>";
+        }
+    }    
 }
 
 

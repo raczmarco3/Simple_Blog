@@ -4,9 +4,9 @@
 ?>
 
     <form method="POST" action="">
-    Username: <input type="text" name="username" required>
-    Password: <input type="password" name="password" required>
-    <input type="submit" name="submit" value="Submit">
+        Username: <input type="text" name="username" required>
+        Password: <input type="password" name="password" required>
+        <input type="submit" name="submit" value="Submit">
     </form>
 
 
