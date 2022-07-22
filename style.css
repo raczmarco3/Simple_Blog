@@ -44,3 +44,7 @@ body {
     margin-right: 7px;
     margin-bottom: 10px;
 }
+
+.login_form p{
+    text-align: center;
+}

@@ -22,21 +22,24 @@
                                 <input type="password" name="password" required><br>
                                 <input type="submit" name="login" value="Login">
                             </form>
-                        </div>
+                        </div>                        
                 <?php
                     } else {
-                        echo "Welcome back ", $_SESSION["username"];
+                        echo '<div class="login_form">';
+                        echo "<p>Welcome back ", $_SESSION["username"], "!</p>";
                 ?>
                         <form method="POST" action="">
-                            <input type="submit" name="logout" value="Logout">
+                        <input type="submit" name="logout" value="Logout">
                         </form>
                 <?php
                         if(isset($_POST["logout"])) {
                             unset($_SESSION["username"]);
                             header('Refresh: 0;');
                         }
+                        echo "</div>";
                     }
-                ?>
+                 ?>
+                        
             </div>
             <div class="left"> asddsa
 
