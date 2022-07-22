@@ -11,5 +11,5 @@
         function register($username, $password) {
             $this-> connection -> createUser($username, $password);
         }
-    }
+    } 
 ?>

@@ -19,5 +19,5 @@
             $user -> register($_POST["username"], md5($_POST["password"]));
         }
     }    
-    include "footer.php";
+    include "footer.php"; 
 ?>
