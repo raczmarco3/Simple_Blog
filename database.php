@@ -3,8 +3,8 @@
 Class Database {
     
     public $connection;
-    private $username;
-    private $password;
+    private $user;
+    private $pw;
     private $database;
     private $host;
 
@@ -14,13 +14,13 @@ Class Database {
 
     // Set connection to db
     private function db_connect() {
-        $this->username = "root2";
-        $this->password = "";
+        $this->user = "root";
+        $this->pw = "";
         $this->database = "simpleBlog";
         $this->host = "localhost";
         
         try {
-            $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database); 
+            $this->connection = new mysqli($this->host, $this->user, $this->pw, $this->database); 
         } catch (Exception $exc) {
             echo "Caught Exception: ", $exc -> getMessage(), "<br>";
         }     
@@ -29,11 +29,14 @@ Class Database {
     }
 
     // Create a new user 
-    function createUser() {
-
+    function createUser($username, $password, $admin=0) {
+        $query = "INSERT INTO users SET username='$username', password='$password', admin=$admin;";
+        try {
+            $result = $this->connection->query($query);
+        } catch (Exception $exc) {
+            echo "Caught Exception: ", $exc -> getMessage(), "<br>";
+        }
     }
-
-
 }
 
 
