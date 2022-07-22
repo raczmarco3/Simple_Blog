@@ -55,15 +55,14 @@ Class Database {
         }
     }
     
-    function listPosts() {
+    function postsQuery() {
         $query = "SELECT * FROM posts ORDER BY date desc;";
         try {
-            $result = $this -> connection -> query($query);
+            return $this -> connection -> query($query);
         } catch (Exception $exc) {
             echo "Caught Exception: ", $exc -> getMessage(), "<br>";
         }
     }
 }
-
 
 ?>
