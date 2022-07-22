@@ -1,0 +1,46 @@
+body {
+    background-color: #e6e6e6;
+    width: 100%;
+}
+
+.container {
+    overflow: hidden;
+    width: 90%;
+    margin:0 auto;
+    margin-top:15px;
+}
+
+.left {
+    float: left;
+    width: 77%;
+    padding: 5px;
+}
+
+.right {
+    width: 300px;
+    float: right;
+    padding: 5px;
+}
+
+.login_form{
+    border: 1px solid #b3b3ff;
+    border-radius:25px;
+    overflow: hidden;
+    padding-top:5px;
+}
+
+.login_form form {
+    width: 80%;
+    margin:0 auto;
+}
+
+.login_form input[type=text], input[type=password]{
+    margin: 3px;
+    width: 200px;
+}
+
+.login_form input[type=submit]{
+    float:right;
+    margin-right: 7px;
+    margin-bottom: 10px;
+}

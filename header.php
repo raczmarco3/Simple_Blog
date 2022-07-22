@@ -6,33 +6,39 @@
 <!DOCTYPE html>
     <head>
         <title>Simple Blog</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="right">
-            <?php
-                if(!isset($_SESSION["username"])) {
-            ?>
-                    <form method="POST" action="">
-                        Username: <input type="text" name="username" required>
-                        Password: <input type="password" name="password" required>
-                        <input type="submit" name="login" value="Login">
-                    </form>
-            <?php
-                } else {
-                    echo "Welcome back ", $_SESSION["username"];
-            ?>
-                    <form method="POST" action="">
-                        <input type="submit" name="logout" value="Logout">
-                    </form>
-            <?php
-                    if(isset($_POST["logout"])) {
-                        unset($_SESSION["username"]);
-                        header('Refresh: 0;');
+        <div class="container">
+            <div class="right">
+                <?php
+                    if(!isset($_SESSION["username"])) {
+                ?>      
+                        <div class="login_form">
+                            <form method="POST" action="">
+                                <label for="username"><b>Username:</b></label><br>
+                                <input type="text" name="username" required><br>
+                                <label for="password"><b>Password:</b></label><br>
+                                <input type="password" name="password" required><br>
+                                <input type="submit" name="login" value="Login">
+                            </form>
+                        </div>
+                <?php
+                    } else {
+                        echo "Welcome back ", $_SESSION["username"];
+                ?>
+                        <form method="POST" action="">
+                            <input type="submit" name="logout" value="Logout">
+                        </form>
+                <?php
+                        if(isset($_POST["logout"])) {
+                            unset($_SESSION["username"]);
+                            header('Refresh: 0;');
+                        }
                     }
-                }
-            ?>
-        </div>
-        <div class="left">
+                ?>
+            </div>
+            <div class="left"> asddsa
 
 <?php
     if(isset($_POST["login"])) {
