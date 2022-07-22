@@ -34,10 +34,15 @@ Class Database {
         try {
             $result = $this->connection->query($query);
         } catch (Exception $exc) {
-            echo "Caught Exception: ", $exc -> getMessage(), "<br>";
+            if(str_contains($exc -> getMessage(), "for key 'username'")) {
+                echo "This username already exists!";
+            } else {
+                echo "Caught Exception: ", $exc -> getMessage(), "<br>";
+            }            
         }
     }
 
+    //check if password is correct
     function checkPassword($username, $password) {
         $query = "SELECT password FROM users WHERE username='$username' AND password='$password';";
         try {
@@ -48,7 +53,16 @@ Class Database {
         } catch (Exception $exc) {
             echo "Caught Exception: ", $exc -> getMessage(), "<br>";
         }
-    }    
+    }
+    
+    function listPosts() {
+        $query = "SELECT * FROM posts ORDER BY date desc;";
+        try {
+            $result = $this -> connection -> query($query);
+        } catch (Exception $exc) {
+            echo "Caught Exception: ", $exc -> getMessage(), "<br>";
+        }
+    }
 }
 
 

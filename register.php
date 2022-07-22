@@ -1,6 +1,5 @@
 <?php
     include "header.php";
-    include "backend/user.php";
 ?>
 
     <form method="POST" action="">
