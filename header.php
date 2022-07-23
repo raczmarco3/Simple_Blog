@@ -41,7 +41,7 @@
                  ?>
                         
             </div>
-            <div class="left"> asddsa
+            <div class="left"> 
 
 <?php
     if(isset($_POST["login"])) {
